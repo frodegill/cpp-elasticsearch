@@ -846,8 +846,8 @@ std::string Json::Object::str() const {
 
 bool Json::Object::contain(const Object& o) const {
 
-    for(const std::pair< Key, Value >& p : o._memberMap){
-        std::map< Key, Value >::const_iterator cit = _memberMap.find(p.first);
+    for(const std::pair<const Key, Value >& p : o._memberMap){
+        std::map<const Key, Value >::const_iterator cit = _memberMap.find(p.first);
         if( cit == _memberMap.end() ){
             return false;
         }
